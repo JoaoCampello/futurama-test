@@ -1,0 +1,126 @@
+.landing-page {
+    font-family: 'Exo 2', sans-serif;
+    position: relative;
+    min-height: 100vh;
+    width: 100%;
+    overflow: hidden;
+}
+
+.landing-page::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 32, 128, 0.6); 
+    z-index: 0;
+}
+
+
+.video-background {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -1;
+}
+
+.landing-header {
+    position: relative;
+    z-index: 1;
+    color: white; 
+    text-align: center;
+    padding: 2rem;
+}
+
+.landing-header h1 {
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 700;
+    font-size: 3.5rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 1rem;
+    text-shadow: 0 0 10px rgba(0, 195, 255, 0.5);
+}
+.landing-header p {
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+}
+
+.main-content {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+.center-image { 
+    max-width: 400px;
+    width: 80%;
+    height: auto;
+    margin-bottom: 2rem;
+    filter: brightness(0.8) sepia(0.4) hue-rotate(190deg);
+    transition: all 0.5s ease;
+}
+
+.center-image:hover {
+    filter: none;
+}
+
+.button-container {
+    display: flex;
+    gap: 2rem;
+}
+
+.button-container button {
+    padding: 1rem 2rem;
+    font-size: 1.2rem;
+    font-family: 'Orbitron', sans-serif;
+    text-transform: uppercase;
+    background-color: rgba(0, 0, 0, 0.6);
+    border: 2px solid #00c3ff;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.button-container button:hover {
+    background-color: #00c3ff;
+    box-shadow: 0 0 15px rgba(0, 195, 255, 0.5);
+    transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+    .center-image {
+        max-width: 300px;
+    }
+
+    .button-container {
+        gap: 1rem;
+    }
+
+    .button-container button {
+        padding: 0.8rem 1.5rem;
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .button-container {
+        flex-direction: column;
+        width: 80%;
+        max-width: 250px;
+    }
+
+    .button-container button {
+        width: 100%;
+    }
+}

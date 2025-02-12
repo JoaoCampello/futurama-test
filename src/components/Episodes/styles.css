@@ -1,0 +1,171 @@
+.episodes-page {
+    position: relative;
+    min-height: 100vh;
+    width: 100%;
+    padding: 80px 0 20px;
+    overflow-x: hidden;
+}
+
+.episodes-page::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 32, 128, 0.6); 
+    z-index: 0;
+}
+
+.video-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    min-width: 100%;
+    min-height: 100%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+.loading {
+    position: relative;
+    z-index: 1;
+    color: white;
+    text-align: center;
+    padding: 2rem;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.2rem;
+    text-shadow: 0 0 10px rgba(0, 195, 255, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 300px;
+    width: 100%;
+    grid-column: 1 / -1; 
+}
+
+.episode-info .air-date {
+    font-size: 0.8rem;
+    color: #00c3ff;
+    margin-top: 0.5rem;
+    opacity: 0.8;
+}
+
+.season-selector {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    gap: 0.75rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+    padding: 0 1rem;
+}
+
+.season-button {
+    padding: 0.8rem 1.5rem;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1rem;
+    background-color: rgba(0, 0, 0, 0.6);
+    border: 2px solid #00c3ff;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.season-button:hover {
+    background-color: rgba(0, 195, 255, 0.2);
+    box-shadow: 0 0 15px rgba(0, 195, 255, 0.3);
+}
+
+.season-button.active {
+    background-color: #00c3ff;
+    box-shadow: 0 0 15px rgba(0, 195, 255, 0.5);
+}
+
+.episodes-grid {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 2rem;
+    padding: 1rem;
+}
+
+.episode-card {
+    background-color: rgba(0, 0, 0, 0.6);
+    border: 2px solid #00c3ff;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.episode-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 20px rgba(0, 195, 255, 0.3);
+}
+
+.episode-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-bottom: 2px solid #00c3ff;
+}
+
+.episode-info {
+    padding: 1rem;
+    color: white;
+}
+
+.episode-info h3 {
+    font-family: 'Orbitron', sans-serif;
+    margin: 0 0 0.5rem 0;
+    font-size: 1.1rem;
+    color: #00c3ff;
+}
+
+.episode-info p {
+    margin: 0;
+    font-size: 1rem;
+    color: #fff;
+}
+
+.content-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+@media (max-width: 768px) {
+    .episodes-page {
+        padding: 60px 10px 20px;
+    }
+    
+    .season-selector {
+        gap: 0.5rem;
+    }
+
+    .season-button {
+        padding: 0.6rem 1rem;
+        font-size: 0.9rem;
+    }
+
+    .episodes-grid {
+        gap: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .season-button {
+        padding: 0.5rem 0.8rem;
+        font-size: 0.8rem;
+    }
+
+    .episodes-grid {
+        grid-template-columns: 1fr;
+    }
+}
